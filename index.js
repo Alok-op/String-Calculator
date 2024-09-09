@@ -5,7 +5,7 @@ function add(number) {
 
   let negativeNumbers = [];
   if (number) {
-    let num = number.split(',');
+    let num = number.split(/[,\n]/);
     let sum = 0;
     for (let value of num) {
       console.log(value);
@@ -20,10 +20,10 @@ function add(number) {
     }
   }
   if (negativeNumbers.length > 0) {
-    console.log("negative numbers not allowed", negativeNumbers.join(","))
-    throw("66negative numbers not allowed", negativeNumbers.join(","));
+    console.log('negative numbers not allowed', negativeNumbers.join(','));
+    throw ('66negative numbers not allowed', negativeNumbers.join(','));
   }
 }
 
-add('-5, -5, -2');
-
+// add('1,5');
+add('1\n2,3');
