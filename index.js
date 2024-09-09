@@ -1,11 +1,10 @@
 function add(number) {
-  // console.log(number.length)
   if (number === '') {
     console.log(0);
   }
 
+  let negativeNumbers = [];
   if (number) {
-    // let num = number.replace(",", "");
     let num = number.split(',');
     let sum = 0;
     for (let value of num) {
@@ -15,12 +14,16 @@ function add(number) {
         sum = sum + val;
         console.log('sum', sum);
       } else {
-        console.log('negative numbers not allowed', val);
+        negativeNumbers.push(val);
+        // console.log('negative numbers not allowed', val);
       }
     }
   }
-  // let num = Number(number);
-  // console.log(num);
+  if (negativeNumbers.length > 0) {
+    console.log("negative numbers not allowed", negativeNumbers.join(","))
+    throw("66negative numbers not allowed", negativeNumbers.join(","));
+  }
 }
 
-add('-5');
+add('-5, -5, -2');
+
