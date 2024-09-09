@@ -20,7 +20,9 @@ function commaAndNewLineDelemeter(number) {
       if (val < 0) {
         negativeNumbers.push(val);
       } else {
-        sum = sum + val;
+        if (val< 1000) {
+          sum = sum + val;
+        }
       }
     }
     console.log('sum', sum);
@@ -46,3 +48,4 @@ function handleOtherDelemeter(number) {
 add('1,5');
 add('1\n2,3');
 add('//;\n1;2');
+add("2, 1001")
